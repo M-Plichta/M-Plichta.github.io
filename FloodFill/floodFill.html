@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flood Fill Visualization</title>
+    <script type="text/javascript" src="floodFill.js" defer></script>
+    <link href="Style_floodFill.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h1>Flood Fill Algorithm Visualisation</h1>
+    <div class="main">
+        <canvas id="myCanvas" width="800px" height="800px" style="border: 2px solid black;"></canvas>
+
+        <table class="FloodFillMenu">
+            <tr>
+                <th>
+                    <h2>How to use:</h2>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <p class="step">Step 1) Pick a resolution:</p>
+                    <input type="range" min="4" max="16" value="10" id="gridRange">
+                    <p class="values">Value: <span id="gridNumValue"></span></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="step">Step 2) Pick the colour range:</p>
+                    <input type="range" min="2" max="4" value="2" id="colourRange">
+                    <p class="values">Value: <span id="colourRangeValue"></span></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="step">Step 3) Pick the speed:</p>
+                    <input type="range" min="0" max="2" value="0" id="speed">
+                    <p class="values">Value: <span id="speedValue"></span></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="step">Step 4) Pick a replacement colour:</p>
+                    <input class="red" type="radio" id="redCheckbox" name="colourPicker" value="rgb(255, 0, 0)"
+                        checked="checked" oninput="setReplacementColour()">
+                    <input class="green" type="radio" id="greenCheckbox" name="colourPicker" value="rgb(0, 128, 0)"
+                        oninput="setReplacementColour()">
+                    <input class="blue" type="radio" id="blueCheckbox" name="colourPicker" value="rgb(0, 0, 255)"
+                        oninput="setReplacementColour()">
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="step">Step 5) Generate canvas and pick a starting position (left click on the grid)</p>
+                    <p>The colour you pick will be displayed below:</p>
+                    <canvas id="startColour" width="100px" height="100px"
+                        style="border: 2px solid black; border-radius: 10px;">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="step"> Step 6) Finally, run the Algorithm!</p>
+                    <button onclick="generateCanvas()">Generate Canvas</button>
+                    <button onclick="floodFillValidation()">Run Algorithm</button>
+                    <p class="errorMessage"><span id="er_message"></span></p>
+                </td>
+            </tr>
+        </table>
+        <pre><p><span id="console"></span></p></pre>
+    </div>
+</body>
+
+</html>

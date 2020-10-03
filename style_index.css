@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+}
+
+.navbar {
+    list-style-type: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    display: inline;
+    margin: 0;
+    padding: 5px;
+    background-color: lightblue;
+    float: left;
+}
+
+li :hover{
+    background-color: blue;
+}
